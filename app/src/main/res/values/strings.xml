@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">To Do List</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="a">What is to be done?</string>
+    <string name="b">All tasks from the list will also be
+                      deleted</string>
+</resources>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    tools:context=".NewTaskFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryLight"
+    app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+    app:title="New Task"
+    app:titleTextColor="@color/white"/>
+
+<!--    <TextView-->
+<!--        android:layout_width="130dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginStart="80dp"-->
+<!--        android:text="New Task"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold" />-->
+
+
+
+
+
+    <TextView
+        android:layout_width="260dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="60dp"
+       android:text="@string/a"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryLight"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="91dp"
+        android:hint="Enter Task Here"
+        android:textColorHint="#88FFFFFF"
+        android:textSize="20dp" />
+
+    <ImageButton
+        android:id="@+id/mic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="94dp"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_baseline_mic_24" />
+<TextView
+    android:layout_width="250dp"
+    android:layout_height="30dp"
+    android:layout_marginTop="150dp"
+    android:layout_marginStart="10dp"
+    android:text="Due date"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:textColor="@color/colorPrimaryLight"/>
+    <EditText
+        android:id="@+id/dateEdit"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="180dp"
+        android:hint="Date not set"
+        android:textColorHint="#9CFAF7F7"
+        android:textSize="20dp"
+       />
+    <TextView
+        android:id="@+id/notification"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="220dp"
+        android:text="Notifications"
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimaryLight"/>
+    <TextView
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:text="No notifications if date not set."
+        android:textColor="#9CFAF7F7"
+        android:textSize="15sp"
+        android:layout_marginStart="25dp"/>
+    
+    <ImageButton
+        android:id="@+id/datePicker"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginStart="320dp"
+        android:src="@drawable/ic_baseline_calendar_today_24"
+        android:layout_marginTop="179dp"/>
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginStart="10dp"
+        android:text="Add to List"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="18sp"/>
+    <ImageButton
+        android:id="@+id/newList"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="342dp"
+        android:src="@drawable/list4"
+
+        android:background="@color/colorPrimary"/>
+
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="266dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="340dp"
+
+        android:backgroundTint="@color/white"
+        android:popupBackground="@color/white" />
+
+</FrameLayout>
