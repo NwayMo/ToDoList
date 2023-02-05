@@ -4,11 +4,15 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +25,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -52,6 +57,10 @@ Toolbar toolbar;
        adapter.setDropDownViewResource(R.layout.spinner_drop);
         spinner.setAdapter(adapter);
 
+FloatingActionButton floatingActionButton=view.findViewById(R.id.fab);
+floatingActionButton.setOnClickListener(v->{
+    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.newTask,new TaskListsFragment()).commit();
+});
 toolbar=view.findViewById(R.id.toolbar);
 toolbar.setNavigationOnClickListener(new View.OnClickListener() {
     @Override
@@ -62,12 +71,13 @@ toolbar.setNavigationOnClickListener(new View.OnClickListener() {
         newListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder=new AlertDialog.Builder(getContext());
+                AlertDialog.Builder builder=new AlertDialog.Builder(getContext(),R.style.alertdialog);
                 LayoutInflater layoutInflater=getLayoutInflater();
                 View view1=layoutInflater.inflate(R.layout.newtextdialog,null);
                 builder.setView(view1)
+
                         .setTitle("New List")
-                        .setPositiveButton("ADd", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("ADD", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Toast.makeText(getContext(), "ok", Toast.LENGTH_SHORT).show();
@@ -114,6 +124,8 @@ snackbar1.show();
 
             Toast.makeText(getContext(), "noti", Toast.LENGTH_SHORT).show();
         });
+
+
         return view;
     }
 }

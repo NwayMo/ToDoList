@@ -5,12 +5,14 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary"
-    tools:context=".NewTaskFragment">
+    tools:context=".NewTaskFragment"
+    android:id="@+id/newTask">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+
         android:background="@color/colorPrimaryLight"
     app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
     app:title="New Task"
@@ -44,9 +46,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
         android:layout_marginTop="91dp"
+        android:textColor="@color/white"
         android:hint="Enter Task Here"
         android:textColorHint="#88FFFFFF"
         android:textSize="20dp" />
+
+
+
+
+
 
     <ImageButton
         android:id="@+id/mic"
@@ -121,7 +129,7 @@
         android:background="@color/colorPrimary"/>
 
 
-    <Spinner
+    <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/spinner"
         android:layout_width="266dp"
         android:layout_height="wrap_content"
@@ -130,5 +138,14 @@
 
         android:backgroundTint="@color/white"
         android:popupBackground="@color/white" />
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="280dp"
+    android:layout_marginTop="600dp"
+android:id="@+id/fab"
+app:backgroundTint="@color/white"
+    android:src="@drawable/ic_baseline_check_24"
 
+    />
 </FrameLayout>

@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                getSupportFragmentManager().beginTransaction().replace(R.id.main,new TaskListsFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.main,new NewTaskFragment()).commit();
 
             }
         },2000);

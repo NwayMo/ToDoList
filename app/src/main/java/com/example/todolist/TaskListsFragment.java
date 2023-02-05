@@ -51,7 +51,7 @@ Toolbar bar;
                 View view1=layoutInflater.inflate(R.layout.newtextdialog,null);
                 builder.setView(view1)
                         .setTitle("New List")
-                        .setPositiveButton("ADd", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("ADD", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Toast.makeText(getContext(), "ok", Toast.LENGTH_SHORT).show();
@@ -66,20 +66,7 @@ Toolbar bar;
             }
         });
 
-//        getActivity().getSupportFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
-//            @Override
-//            public void onBackStackChanged() {
-//               if(getActivity().getSupportFragmentManager().getBackStackEntryCount()>0){
-//                   getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
-//                   toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//                       @Override
-//                       public void onClick(View v) {
-//                           getActivity().onBackPressed();
-//                       }
-//                   });
-//               }
-//            }
-//        });
+
 bar.setNavigationOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
