@@ -5,4 +5,5 @@
     <string name="a">What is to be done?</string>
     <string name="b">All tasks from the list will also be
                       deleted</string>
+    <string name="notification">No notification if date note set</string>
 </resources>
