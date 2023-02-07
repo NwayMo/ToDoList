@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.DirectAction;
 import android.content.DialogInterface;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +38,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class NewTaskFragment extends Fragment {
     FragmentNewTaskBinding binding;
@@ -45,7 +48,7 @@ Spinner spinner;
 List<String> list;
 ImageButton newListButton;
 Toolbar toolbar;
-ImageButton date,listButton;
+ImageButton date,listButton,timeButton,cancelButton1;
 TextView textView1,textView2,textView3;
 ConstraintLayout constraintLayout;
 boolean check=false;
@@ -56,22 +59,26 @@ boolean check=false;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-     View view=inflater.inflate(R.layout.fragment_new_task, container, false);
-        ImageButton imageButton=view.findViewById(R.id.mic);
-       editDate=view.findViewById(R.id.dateEdit);
-       editTime=view.findViewById(R.id.timeEdit);
-       textView1=view.findViewById(R.id.notification);
-       textView2=view.findViewById(R.id.textView2);
-       textView3=view.findViewById(R.id.addtolist);
-       constraintLayout=view.findViewById(R.id.constraint);
-listButton=view.findViewById(R.id.newList);
-       spinner=view.findViewById(R.id.spinner);
-      newListButton=view.findViewById(R.id.newList);
-        list=new ArrayList<>();
-        list.addAll(Arrays.asList("Personal","Shopping","Wishlist","work"));
-        ArrayAdapter<String> adapter=new ArrayAdapter<>(getContext(), R.layout.colorspinner_layout,list);
-       adapter.setDropDownViewResource(R.layout.spinner_drop);
+        View view = inflater.inflate(R.layout.fragment_new_task, container, false);
+        ImageButton imageButton = view.findViewById(R.id.mic);
+        editDate = view.findViewById(R.id.dateEdit);
+        editTime = view.findViewById(R.id.timeEdit);
+        textView1 = view.findViewById(R.id.notification);
+        textView2 = view.findViewById(R.id.textView2);
+        textView3 = view.findViewById(R.id.addtolist);
+        constraintLayout = view.findViewById(R.id.constraint);
+        listButton = view.findViewById(R.id.newList);
+        spinner = view.findViewById(R.id.spinner);
+timeButton=view.findViewById(R.id.timeEdit1);
+cancelButton1=view.findViewById(R.id.cancel_button1);
+        newListButton = view.findViewById(R.id.newList);
+        list = new ArrayList<>();
+        list.addAll(Arrays.asList("Personal", "Shopping", "Wishlist", "work"));
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.colorspinner_layout, list);
+        adapter.setDropDownViewResource(R.layout.spinner_drop);
         spinner.setAdapter(adapter);
+
+
 
 FloatingActionButton floatingActionButton=view.findViewById(R.id.fab);
 floatingActionButton.setOnClickListener(v->{
@@ -152,6 +159,9 @@ date.setOnClickListener(new View.OnClickListener() {
                 constraintLayout.setPadding(0,300,0,0);
 
                 listButton.setPadding(0,300,0,0);
+                timeButton.setVisibility(View.VISIBLE);
+                timeButton.setPadding(65,0,0,0);
+
             }
 
 //        }
@@ -180,12 +190,19 @@ cancelButton.setOnClickListener(v->{
         constraintLayout.setPadding(0,0,0,300);
 
         listButton.setPadding(0,0,0,300);
+    cancelButton1.setVisibility(View.GONE);
+    timeButton.setVisibility(View.GONE);
     }
 
 
 });
-editTime.setOnClickListener(v->{
-
+timeButton.setOnClickListener(v->{
+    timeButton.setPadding(0,0,185,0);
+    cancelButton1.setVisibility(View.VISIBLE);
+});
+cancelButton1.setOnClickListener(v->{
+    cancelButton1.setVisibility(View.GONE);
+    timeButton.setPadding(65,0,0,0);
 });
 
         return view;
