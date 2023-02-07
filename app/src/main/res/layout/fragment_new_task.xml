@@ -131,6 +131,27 @@
         android:layout_marginStart="320dp"
         android:src="@drawable/ic_baseline_cancel_24"
         android:layout_marginTop="179dp"/>
+    <ImageButton
+        android:id="@+id/timeEdit1"
+
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_marginStart="295dp"
+        android:layout_marginTop="220dp"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_baseline_access_time_24"
+        android:visibility="gone" />
+    <ImageButton
+        android:id="@+id/cancel_button1"
+        android:layout_width="fill_parent"
+        android:visibility="gone"
+        android:layout_height="30dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginStart="320dp"
+        android:src="@drawable/ic_baseline_cancel_24"
+        android:layout_marginTop="220dp"/>
+
+
     <TextView
         android:id="@+id/addtolist"
         android:layout_width="250dp"
@@ -177,8 +198,10 @@
 <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+
     android:layout_marginStart="280dp"
     android:layout_marginTop="600dp"
+
 android:id="@+id/fab"
 app:backgroundTint="@color/white"
     android:src="@drawable/ic_baseline_check_24"
