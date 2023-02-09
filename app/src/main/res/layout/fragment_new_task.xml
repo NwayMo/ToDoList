@@ -3,303 +3,185 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary"
     tools:context=".NewTaskFragment"
     android:id="@+id/newTask">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:background="@color/colorPrimaryLight"
+    app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+    app:title="New Task"
+    app:titleTextColor="@color/white"/>
+
+<!--    <TextView-->
+<!--        android:layout_width="130dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginStart="80dp"-->
+<!--        android:text="New Task"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold" />-->
+
+
+
+
+
+    <TextView
+        android:layout_width="260dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="60dp"
+       android:text="@string/a"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryLight"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/TaskName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="91dp"
+        android:textColor="@color/white"
+        android:hint="Enter Task Here"
+        android:textColorHint="#88FFFFFF"
+        android:textSize="20dp" />
+
+
+    <ImageButton
+        android:id="@+id/mic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="340dp"
+        android:layout_marginTop="94dp"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_baseline_mic_24" />
+<TextView
+    android:layout_width="250dp"
+    android:layout_height="30dp"
+    android:layout_marginTop="150dp"
+    android:layout_marginStart="10dp"
+    android:text="Due date"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:textColor="@color/colorPrimaryLight"/>
+    <EditText
+        android:id="@+id/dateEdit"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="180dp"
+        android:hint="Date not set"
+        android:textColorHint="#9CFAF7F7"
+        android:textSize="20dp"
+       />
+    <EditText
+        android:id="@+id/timeEdit"
+        android:layout_width="250dp"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="210dp"
+        android:hint="Time not set(all day)"
+        android:textColorHint="#9CFAF7F7"
+        android:textSize="20dp"
+       />
+
+    <TextView
+
+        android:id="@+id/notification"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="220dp"
+        android:text="Notifications"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:text="No notifications if date not set."
+        android:textColor="#9CFAF7F7"
+        android:textSize="15sp"
+        android:layout_marginStart="25dp"/>
+
+    <ImageButton
+        android:id="@+id/datePicker"
+        android:adjustViewBounds="true"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginStart="295dp"
+        android:src="@drawable/ic_baseline_calendar_today_24"
+        android:layout_marginTop="179dp"/>
+    <ImageButton
+        android:id="@+id/cancel_button"
+        android:layout_width="fill_parent"
+        android:visibility="gone"
+        android:layout_height="30dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginStart="320dp"
+        android:src="@drawable/ic_baseline_cancel_24"
+        android:layout_marginTop="179dp"/>
+    <TextView
+        android:id="@+id/addtolist"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="310dp"
+        android:layout_marginStart="10dp"
+        android:text="Add to List"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="18sp"/>
+    <ImageButton
+        android:id="@+id/newList"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="340dp"
+        android:layout_marginTop="342dp"
+        android:src="@drawable/list4"
+
+        android:background="@color/colorPrimary"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/constraint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="340dp">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner"
+            android:layout_width="266dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
 
-            android:background="@color/colorPrimaryLight"
+            android:backgroundTint="@color/white"
+            android:popupBackground="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
-            app:title="New Task"
-            app:titleTextColor="@color/white" />
-
-        <TextView
-            android:layout_width="260dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="60dp"
-            android:text="@string/a"
-            android:textColor="@color/colorPrimaryLight"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-
-        <EditText
-
-            android:id="@+id/editText1"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="17dp"
-            android:layout_marginTop="91dp"
-            android:hint="Enter Task Here"
-            android:textColor="@color/white"
-            android:textColorHint="#88FFFFFF"
-            android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageButton
-            android:id="@+id/mic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:background="@color/colorPrimary"
-            android:src="@drawable/ic_baseline_mic_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.943"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.147" />
-
-        <TextView
-            android:layout_width="250dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="150dp"
-            android:text="Due date"
-            android:textColor="@color/colorPrimaryLight"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="17dp"
-            android:layout_marginTop="180dp"
-            android:focusable="false"
-            android:inputType="none"
-            android:hint="Date not set"
-
-            android:textColorHint="#9CFAF7F7"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <EditText
-            android:id="@+id/editText3"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="17dp"
-            android:layout_marginTop="210dp"
-            android:focusable="false"
-            android:hint="Time not set(all day)"
-            android:textColorHint="#9CFAF7F7"
-            android:textSize="20dp"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-
-            android:id="@+id/notification"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="220dp"
-            android:text="Notifications"
-            android:textColor="@color/colorPrimaryLight"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="290dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="240dp"
-            android:text="No notifications if date not set."
-            android:textColor="#9CFAF7F7"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageButton
-
-            android:id="@+id/datePicker"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:adjustViewBounds="true"
-            android:background="@color/colorPrimary"
-            android:src="@drawable/ic_baseline_calendar_today_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.942"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.271" />
-
-        <ImageButton
-            android:id="@+id/cancel_button"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:background="@color/colorPrimary"
-            android:src="@drawable/ic_baseline_cancel_24"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.927"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.271" />
-
-        <ImageButton
-            android:id="@+id/timeEdit1"
-
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:background="@color/colorPrimary"
-            android:src="@drawable/ic_baseline_access_time_24"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.93"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.328" />
-
-
-        <ImageButton
-            android:id="@+id/cancel_button1"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:background="@color/colorPrimary"
-            android:src="@drawable/ic_baseline_cancel_24"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.93"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.328" />
-
-        <TextView
-            android:id="@+id/addtolist"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="310dp"
-            android:text="Add to List"
-            android:textColor="@color/colorPrimaryLight"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageButton
-            android:id="@+id/newList"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="320dp"
-
-            android:background="@color/colorPrimary"
-            android:src="@drawable/list4"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.958"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-
-            android:layout_height="wrap_content"
-
-            android:src="@drawable/ic_baseline_check_24"
-            app:backgroundTint="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.938"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.859" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="340dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.02"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
-
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/spinner"
-                android:layout_width="266dp"
-                android:layout_height="wrap_content"
-
-                android:layout_marginStart="17dp"
-
-                android:backgroundTint="@color/white"
-                android:popupBackground="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+            app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="280dp"
+    android:layout_marginTop="600dp"
+android:id="@+id/fab"
+app:backgroundTint="@color/white"
+    android:src="@drawable/ic_baseline_check_24"
+
+    />
 </FrameLayout>
