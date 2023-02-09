@@ -18,6 +18,8 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.todolist.Adapter.TaskListsAdapter;
+import com.example.todolist.DataBase.NewTaskDatabase;
+import com.example.todolist.Dataclass.NewTask;
 import com.google.android.material.appbar.AppBarLayout;
 
 import java.util.ArrayList;
@@ -27,6 +29,7 @@ import java.util.List;
 public class TaskListsFragment extends Fragment {
 RecyclerView recyclerView;
 ImageButton imageButton;
+NewTaskDatabase db;
 Toolbar bar;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,9 +37,9 @@ Toolbar bar;
       View view=inflater.inflate(R.layout.fragment_task_lists, container, false);
        bar=view.requireViewById(R.id.toolbar1);
 
-
-        List<String > taskList=new ArrayList<>();
-        taskList.addAll(Arrays.asList("Default","Personal","Shopping","Wishlist","Work")) ;
+db=new NewTaskDatabase(getContext());
+        List<NewTask> taskList=new ArrayList<>();
+       taskList= db.getTask();
         TaskListsAdapter adapter=new TaskListsAdapter(taskList,getContext());
         recyclerView=view.findViewById(R.id.recyclerview);
         recyclerView.setAdapter(adapter);

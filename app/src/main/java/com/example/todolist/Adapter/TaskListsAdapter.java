@@ -15,12 +15,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.todolist.Dataclass.NewTask;
 import com.example.todolist.R;
 
 import java.util.List;
 
 public class TaskListsAdapter extends RecyclerView.Adapter<TaskListsAdapter.MyViewHolder>{
- List<String> list;
+ List<NewTask> list;
  Context context;
 
 
@@ -40,7 +41,11 @@ public class TaskListsAdapter extends RecyclerView.Adapter<TaskListsAdapter.MyVi
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-holder.textView1.setText(list.get(position));
+NewTask obj=list.get(position);
+holder.textView1.setText(obj.getTaskName());
+holder.textView2.setText(obj.getDay());
+holder.textView3.setText(obj.getCate());
+
 if(holder.getAdapterPosition()==0){
     holder.deleteButton.setVisibility(View.GONE);
     holder.editButton.setVisibility(View.GONE);
@@ -144,13 +149,14 @@ editText.setText(str);
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-     TextView textView1,textView2;
+     TextView textView1,textView2,textView3;
 
      ImageButton deleteButton,editButton;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             textView1=itemView.findViewById(R.id.title);
             textView2=itemView.findViewById(R.id.task);
+            textView3=itemView.findViewById(R.id.category);
             deleteButton=itemView.findViewById(R.id.delete);
             editButton=itemView.findViewById(R.id.editList);
 
