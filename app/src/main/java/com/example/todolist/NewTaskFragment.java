@@ -131,8 +131,9 @@ cancelButton1=view.findViewById(R.id.cancel_button1);
         list = new ArrayList<>();
         list = cdb.getCate();
         SpinnerAdapter spinnerAdapter=new SpinnerAdapter(list);
-
         spinner.setAdapter(spinnerAdapter);
+
+
 
         fab.setOnClickListener(v -> {
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.newTask, new TaskListsFragment()).commit();
@@ -160,6 +161,9 @@ cancelButton1=view.findViewById(R.id.cancel_button1);
                                 String category = addNewTask.getText().toString();
                                 cdb.saveCate(category);
                                 Toast.makeText(getContext(), "ok", Toast.LENGTH_SHORT).show();
+
+
+
                             }
                         })
                         .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
@@ -276,7 +280,11 @@ cancelButton1=view.findViewById(R.id.cancel_button1);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                cate = parent.getItemAtPosition(position).toString();
+
+            NewTask newTask=list.get(position);
+            cate=newTask.getTaskName();
+
+
 
             }
             @Override
@@ -301,7 +309,7 @@ cancelButton1=view.findViewById(R.id.cancel_button1);
 
 
 
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.newTask,new TaskListsFragment()).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().addToBackStack("h").replace(R.id.newTask,new TaskListsFragment()).commit();
         });
         return view;
     }}

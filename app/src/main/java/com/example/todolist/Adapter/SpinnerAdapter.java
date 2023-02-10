@@ -18,6 +18,7 @@ import java.util.List;
 public class SpinnerAdapter extends BaseAdapter {
 
     ArrayList<NewTask> arrayList;
+
 public SpinnerAdapter(ArrayList <NewTask>list){
     this.arrayList=list;
 }

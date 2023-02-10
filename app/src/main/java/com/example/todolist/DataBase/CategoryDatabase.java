@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.todolist.Adapter.SpinnerAdapter;
 import com.example.todolist.Dataclass.NewTask;
 
 import java.util.ArrayList;
@@ -47,6 +48,7 @@ public class CategoryDatabase extends SQLiteOpenHelper {
 
             NewTask task=new NewTask(name);
             list1.add(task);
+
         }
 
         return list1;
