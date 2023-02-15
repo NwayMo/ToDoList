@@ -1,28 +1,23 @@
 package com.example.todolist.Adapter;
 
-import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.todolist.Dataclass.NewTask;
+import com.example.todolist.NewTaskFragment;
 import com.example.todolist.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpinnerAdapter extends BaseAdapter {
-
+public class SpinnerAdapter1 extends BaseAdapter {
     ArrayList<NewTask> arrayList;
-
-public SpinnerAdapter(ArrayList <NewTask>list){
-    this.arrayList=list;
-}
+    public SpinnerAdapter1(ArrayList list){
+        this.arrayList=list;
+    }
     @Override
     public int getCount() {
         return arrayList.size();
@@ -40,29 +35,31 @@ public SpinnerAdapter(ArrayList <NewTask>list){
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-       CateHolder  holder;
+       RepeatHolder holder;
 
-        View cateView=convertView;
-        if(cateView==null){
-         cateView= LayoutInflater.from(parent.getContext()).inflate(R.layout.spinner_cate,parent,false);
-       holder=new CateHolder();
+        View repeatView=convertView;
+        if(repeatView==null){
+        repeatView= LayoutInflater.from(parent.getContext()).inflate(R.layout.spinner_cate,parent,false);
+            holder=new RepeatHolder();
 
-       holder.cateName=cateView.findViewById(R.id.textView4);
-cateView.setTag(holder);
+            holder.repeat=repeatView.findViewById(R.id.textView4);
+          repeatView.setTag(holder);
         }else{
-            holder=(CateHolder) cateView.getTag();
+            holder=(RepeatHolder) repeatView.getTag();
         }
         NewTask newTask=arrayList.get(position);
-        holder.cateName.setText(newTask.getTaskName());
+        holder.repeat.setText(newTask.getTaskName());
+        NewTaskFragment newTaskFragment=new NewTaskFragment();
 
 
 
 
 
-        return cateView;
+
+        return repeatView;
     }
-    class CateHolder{
-
-        private TextView cateName;
+    class RepeatHolder{
+        private TextView repeat;
     }
 }
+

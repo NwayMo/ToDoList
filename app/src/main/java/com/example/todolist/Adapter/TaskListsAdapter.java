@@ -1,8 +1,11 @@
 package com.example.todolist.Adapter;
 
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.opengl.Visibility;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,11 +16,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.todolist.Dataclass.NewTask;
+import com.example.todolist.MainActivity;
 import com.example.todolist.R;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class TaskListsAdapter extends RecyclerView.Adapter<TaskListsAdapter.MyViewHolder>{
@@ -50,6 +56,7 @@ if(holder.getAdapterPosition()==0){
     holder.deleteButton.setVisibility(View.GONE);
     holder.editButton.setVisibility(View.GONE);
 }
+
 holder.deleteButton.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
@@ -163,4 +170,6 @@ editText.setText(str);
 
         }
     }
+
+
 }
