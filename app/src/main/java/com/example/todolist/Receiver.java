@@ -8,6 +8,7 @@ import android.content.Intent;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.example.todolist.Dataclass.NewTask;
 
 
 public class Receiver extends BroadcastReceiver {
@@ -18,10 +19,11 @@ public class Receiver extends BroadcastReceiver {
         Intent intent1=new Intent(context,MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent=PendingIntent.getActivity(context,0,intent1,0);
+        NewTask newTask=new NewTask();
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context,Utils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_launcher_background)
-                .setContentTitle("My Notification")
+                .setContentTitle(newTask.getS())
                 .setContentText("This is a notification")
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)

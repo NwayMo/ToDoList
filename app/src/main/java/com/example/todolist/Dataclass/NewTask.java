@@ -4,7 +4,19 @@ public class NewTask {
   String taskName;
     String day;
     String cate;
-public NewTask(String name){
+    String s;
+public NewTask(){
+
+}
+    public String getS() {
+        return s;
+    }
+
+    public void setS(String s) {
+        this.s = s;
+    }
+
+    public NewTask(String name){
     this.taskName=name;
 
 }

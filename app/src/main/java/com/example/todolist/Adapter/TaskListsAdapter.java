@@ -52,6 +52,8 @@ holder.textView1.setText(obj.getTaskName());
 holder.textView2.setText(obj.getDay());
 holder.textView3.setText(obj.getCate());
 
+NewTask task=new NewTask();
+task.setS(obj.getTaskName());
 if(holder.getAdapterPosition()==0){
     holder.deleteButton.setVisibility(View.GONE);
     holder.editButton.setVisibility(View.GONE);

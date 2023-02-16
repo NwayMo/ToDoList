@@ -138,7 +138,10 @@ boolean isCheck=true;
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 editTime.setText(hourOfDay+ ":"+minute);
-                setNotificationTime(hourOfDay,minute);
+                if(db.saveTask("","","")==true){
+                   // setNotificationTime(hourOfDay,minute);
+                }
+
             }
         },hour,minute,true);
         timePickerDialog.setTitle("Choose Time");
@@ -433,21 +436,26 @@ notificationChannel();
         fab.setOnClickListener(v->{
             String name=nameTask.getText().toString();
             String time=String.valueOf(editTime.getText());
+            int i=time.indexOf(":");
+            setNotificationTime(Integer.parseInt(time.substring(0,i)),Integer.parseInt(time.substring(i+1)));
             String day= String.valueOf(editDate.getText());
             if(time.length()==0 && nameTask.getText().length()!=0 ){
                 db.saveTask(name,day,cate);
             }else if (nameTask.getText().length()!=0){
                 String day1= String.valueOf(editDate.getText()).concat(",").concat(time);
-                db.saveTask(name,day1,cate);
+               db.saveTask(name,day1,cate);
+
+                getActivity().getSupportFragmentManager().beginTransaction().addToBackStack("h").replace(R.id.newTask,new TaskListsFragment()).commit();
+
             }else{
 
-
+                Toast.makeText(getContext(), "Enter task at first", Toast.LENGTH_SHORT).show();
 
             }
 
 
 
-            getActivity().getSupportFragmentManager().beginTransaction().addToBackStack("h").replace(R.id.newTask,new TaskListsFragment()).commit();
+
         });
 
         return view;
@@ -465,7 +473,7 @@ notificationChannel();
         NotificationManager manager=getActivity().getSystemService(NotificationManager.class);
         manager.createNotificationChannel(channel);
     }
-    private void setNotificationTime(int hour, int minute) {
+  public void setNotificationTime(int hour, int minute) {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, hour);
         calendar.set(Calendar.MINUTE, minute);

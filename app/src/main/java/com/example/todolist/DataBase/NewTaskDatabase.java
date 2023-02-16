@@ -29,7 +29,7 @@ db.execSQL("CREATE TABLE nts(task TEXT,day TEXT,cate TEXT)");
 db.execSQL("DROP TABLE IF EXISTS nts");
 onCreate(db);
     }
-    public void saveTask(String task,String day,String cate) {
+    public boolean saveTask(String task,String day,String cate) {
         database=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put("task",task);
@@ -37,6 +37,7 @@ contentValues.put("day",day);
 contentValues.put("cate",cate);
 
         database.insert("nts",null,contentValues);
+  return true;
     }
     public ArrayList<NewTask> getTask(){
         database=this.getReadableDatabase();
